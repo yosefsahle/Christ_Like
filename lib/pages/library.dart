@@ -1,34 +1,45 @@
 import 'package:flutter/material.dart';
-import 'package:our_app_demo/navigations/drawer.dart';
 import 'package:our_app_demo/pages/screens/book_library.dart';
-import 'package:our_app_demo/widgets/category_card.dart';
 
+// ignore: must_be_immutable
 class LibraryPage extends StatelessWidget {
   List<Tab> library = [
-    Tab(
+    const Tab(
         child: Text(
       'Books',
       style: TextStyle(fontSize: 20),
     )),
-    Tab(
+    const Tab(
         child: Text(
       "Audio",
       style: TextStyle(fontSize: 20),
     )),
-    Tab(
+    const Tab(
         child: Text(
       "Video",
+      style: TextStyle(fontSize: 20),
+    )),
+    const Tab(
+        child: Text(
+      "Bibles",
+      style: TextStyle(fontSize: 20),
+    )),
+    const Tab(
+        child: Text(
+      "Favorites",
       style: TextStyle(fontSize: 20),
     )),
   ];
 
   List<Widget> libraryContent = [
-    Container(
-      child: Book_library(),
-    ),
+    const BookLibrary(),
+    Container(),
+    Container(),
     Container(),
     Container(),
   ];
+
+  LibraryPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +50,7 @@ class LibraryPage extends StatelessWidget {
           backgroundColor: Colors.grey[700],
           centerTitle: true,
           bottom: PreferredSize(
-            preferredSize: Size.fromHeight(10),
+            preferredSize: const Size.fromHeight(10),
             child: TabBar(
               isScrollable: true,
               tabs: library,

@@ -5,10 +5,8 @@ class FeedBack extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text('FeedBack'),
-      ),
+    return const Center(
+      child: Text('FeedBack'),
     );
   }
 }

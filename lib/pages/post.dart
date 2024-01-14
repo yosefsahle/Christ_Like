@@ -29,18 +29,16 @@ class _PostPageState extends State<PostPage> {
     return ListView.builder(
         itemCount: _items.length,
         itemBuilder: (context, index) {
-          return Container(
-            child: Padding(
-              padding: EdgeInsets.all(10),
-              child: Column(
-                children: [
-                  PostCard(
-                    title: _items[index]["title"],
-                    description: _items[index]["description"],
-                    image: _items[index]["image"],
-                  ),
-                ],
-              ),
+          return Padding(
+            padding: const EdgeInsets.all(10),
+            child: Column(
+              children: [
+                PostCard(
+                  title: _items[index]["title"],
+                  description: _items[index]["description"],
+                  image: _items[index]["image"],
+                ),
+              ],
             ),
           );
         });

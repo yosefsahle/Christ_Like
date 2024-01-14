@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 
 class CategoryCard extends StatelessWidget {
+  const CategoryCard({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 50,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(15)),
+          borderRadius: const BorderRadius.all(Radius.circular(15)),
           color: Colors.grey[800]),
       alignment: Alignment.center,
       padding: const EdgeInsets.all(12),
-      child: Column(
+      child: const Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(

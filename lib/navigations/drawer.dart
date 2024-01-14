@@ -7,7 +7,7 @@ class MyDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
         child: ListView(
-      children: [
+      children: const [
         UserAccountsDrawerHeader(
           accountName: Text(''),
           accountEmail: Text(''),
@@ -22,10 +22,6 @@ class MyDrawer extends StatelessWidget {
         ListTile(
           leading: Icon(Icons.person),
           title: Text('Profile'),
-        ),
-        ListTile(
-          leading: Icon(Icons.favorite),
-          title: Text('Favorites'),
         ),
         ListTile(
           leading: Icon(Icons.info),

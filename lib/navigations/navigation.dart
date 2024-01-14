@@ -1,11 +1,11 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:our_app_demo/navigations/drawer.dart';
-import 'package:our_app_demo/pages/feed_back.dart';
+// import 'package:our_app_demo/pages/feed_back.dart';
 import 'package:our_app_demo/pages/home.dart';
 import 'package:our_app_demo/pages/library.dart';
 import 'package:our_app_demo/pages/post.dart';
-import 'package:our_app_demo/pages/profile.dart';
+// import 'package:our_app_demo/pages/profile.dart';
 import 'package:our_app_demo/pages/schedule.dart';
 
 class NavBar extends StatefulWidget {
@@ -31,7 +31,7 @@ ThemeData _lightTheme = ThemeData(
 ThemeData _darkTheme = ThemeData(
   primarySwatch: Colors.red,
   brightness: Brightness.dark,
-  iconTheme: IconThemeData(
+  iconTheme: const IconThemeData(
     color: Colors.white,
   ),
 );
@@ -40,10 +40,11 @@ Color _dark = Colors.grey.shade800;
 Color _light = Colors.white;
 
 class _NavBarState extends State<NavBar> {
+  // ignore: non_constant_identifier_names
   List Screens = [
-    HomePage(),
-    PostPage(),
-    SchedulePage(),
+    const HomePage(),
+    const PostPage(),
+    const SchedulePage(),
     LibraryPage(),
   ];
   int _selectedIndex = 0;
@@ -53,9 +54,9 @@ class _NavBarState extends State<NavBar> {
         debugShowCheckedModeBanner: false,
         theme: _iconBool ? _darkTheme : _lightTheme,
         home: Scaffold(
-          drawer: MyDrawer(),
+          drawer: const MyDrawer(),
           appBar: AppBar(
-            title: Text('Welcome'),
+            title: const Text('Welcome'),
             backgroundColor: _iconBool ? _dark : _light,
             actions: [
               IconButton(
@@ -73,8 +74,8 @@ class _NavBarState extends State<NavBar> {
             backgroundColor: _iconBool ? _light : _dark,
             color: _iconBool ? _dark : _light,
             index: _selectedIndex,
-            animationDuration: Duration(milliseconds: 300),
-            items: [
+            animationDuration: const Duration(milliseconds: 300),
+            items: const [
               Icon(
                 Icons.home,
               ),
