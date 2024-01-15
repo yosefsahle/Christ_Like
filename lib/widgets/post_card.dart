@@ -41,6 +41,13 @@ class PostCard extends StatelessWidget {
               IconButton(onPressed: () {}, icon: const Icon(Icons.comment))
             ],
           ),
+          TextFormField(
+            decoration: const InputDecoration(
+              border: OutlineInputBorder(),
+              iconColor: Colors.black,
+              labelText: 'Write Your Comment',
+            ),
+          ),
           const Divider(
             color: Colors.amber,
           ),
