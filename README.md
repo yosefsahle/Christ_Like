@@ -1,4 +1,4 @@
-# our_app_demo
+# Christian Social Media App
 
 A new Flutter project.
 
