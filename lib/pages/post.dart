@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:our_app_demo/widgets/post_card.dart';
