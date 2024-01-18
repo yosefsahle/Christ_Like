@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
+import 'package:our_app_demo/pages/home.dart';
 
 class PostCard extends StatelessWidget {
+  var _overlaycontroller = OverlayPortalController();
   final String title;
   final String description;
   final String image;
+  final String date;
 
-  const PostCard(
-      {super.key,
-      required this.title,
-      required this.description,
-      required this.image});
+  PostCard({
+    super.key,
+    required this.title,
+    required this.description,
+    required this.image,
+    required this.date,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +26,9 @@ class PostCard extends StatelessWidget {
               bottomRight: Radius.circular(10))),
       child: Column(
         children: [
-          const ListTile(
-            title: Text('Christ Like'),
-            subtitle: Text('12/02/2024'),
+          ListTile(
+            title: const Text('Christ Like'),
+            subtitle: Text(date),
           ),
           Image.network(
             image,
@@ -38,7 +44,6 @@ class PostCard extends StatelessWidget {
           Row(
             children: [
               IconButton(onPressed: () {}, icon: const Icon(Icons.share)),
-              IconButton(onPressed: () {}, icon: const Icon(Icons.comment))
             ],
           ),
           TextFormField(

@@ -1,4 +1,6 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class SchedulePage extends StatefulWidget {
   const SchedulePage({super.key});
@@ -9,6 +11,9 @@ class SchedulePage extends StatefulWidget {
 
 class _SchedulePageState extends State<SchedulePage> {
   String dropdownValue = 'Personal Life';
+  String personalLifeValue = 'Prayer';
+  bool avilableScheduleDisplay = false;
+  bool checkDateDisplay = true;
 
   bool display(String text) {
     if (text == 'Personal Life') {
@@ -98,7 +103,7 @@ class _SchedulePageState extends State<SchedulePage> {
                 ),
               ),
               const SizedBox(
-                height: 40,
+                height: 10,
               ),
               // second Selection if the user selects Persona life
               Visibility(
@@ -115,14 +120,14 @@ class _SchedulePageState extends State<SchedulePage> {
                         width: 20,
                       ),
                       DropdownButton<String>(
-                        value: dropdownValue,
+                        value: personalLifeValue,
                         icon: const Icon(
                           Icons.keyboard_double_arrow_down_rounded,
                           color: Colors.blue,
                         ),
                         onChanged: (String? newValue) {
                           setState(() {
-                            dropdownValue = newValue!;
+                            personalLifeValue = newValue!;
                           });
                         },
                         items: const [
@@ -143,7 +148,7 @@ class _SchedulePageState extends State<SchedulePage> {
                           DropdownMenuItem<String>(
                             value: 'Ministry',
                             child: Text(
-                              'MInistry',
+                              'Ministry',
                               style: TextStyle(fontSize: 22),
                             ),
                           ),
@@ -159,7 +164,33 @@ class _SchedulePageState extends State<SchedulePage> {
                     ],
                   ),
                 ),
-              )
+              ),
+
+              Visibility(
+                visible: checkDateDisplay,
+                child: TextButton(
+                    onPressed: () {
+                      setState(() {
+                        avilableScheduleDisplay = true;
+                        checkDateDisplay = false;
+                      });
+                    },
+                    child: const Text('Check Avilable Schedule')),
+              ),
+
+              Visibility(
+                visible: avilableScheduleDisplay,
+                child: const Center(
+                  child: Text('True'),
+                ),
+              ),
+
+              ElevatedButton.icon(
+                  onPressed: () {
+                    setState(() {});
+                  },
+                  icon: const Icon(Icons.navigate_next_rounded),
+                  label: const Text('Submit')),
             ],
           ),
         ));

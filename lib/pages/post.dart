@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:our_app_demo/widgets/post_card.dart';
+import 'package:http/http.dart' as http;
 
 class PostPage extends StatefulWidget {
   const PostPage({super.key});
@@ -11,55 +12,80 @@ class PostPage extends StatefulWidget {
 }
 
 class _PostPageState extends State<PostPage> {
-  List _items = [];
+  List _data = [];
 
   Future<void> _refresh() async {
     setState(() {
-      _items.clear();
+      _data.clear();
     });
-    final String response = await rootBundle.loadString('assets/sample.json');
-    final data = await json.decode(response);
+    var response = await http.get(post);
+    var jsonBody = response.body;
+    var jsonData = json.decode(jsonBody);
 
     setState(() {
-      _items = data["items"];
+      _data = jsonData;
     });
 
-    return Future.delayed(Duration(seconds: 3));
+    return Future.delayed(Duration(seconds: 2));
   }
 
-  Future<void> readJson() async {
-    final String response = await rootBundle.loadString('assets/sample.json');
-    final data = await json.decode(response);
+  Uri post = Uri.parse('https://spiritlife.gospelinacts.org/API/');
+  Future getAllpost() async {
+    var response = await http.get(post);
+    var jsonBody = response.body;
+    var jsonData = json.decode(jsonBody);
 
     setState(() {
-      _items = data["items"];
+      _data = jsonData;
     });
-
-    return Future.delayed(Duration(seconds: 3));
   }
 
   @override
   Widget build(BuildContext context) {
-    readJson();
+    getAllpost();
     return RefreshIndicator(
-      onRefresh: _refresh,
-      color: Colors.deepPurple,
-      child: ListView.builder(
-          itemCount: _items.length,
-          itemBuilder: (context, index) {
-            return Padding(
-              padding: const EdgeInsets.all(10),
-              child: Column(
-                children: [
-                  PostCard(
-                    title: _items[index]["title"],
-                    description: _items[index]["description"],
-                    image: _items[index]["image"],
-                  ),
-                ],
+        onRefresh: _refresh,
+        color: Colors.deepPurple,
+        child: Column(
+          children: [
+            Visibility(
+              visible: true,
+              child: Padding(
+                padding: const EdgeInsets.all(12),
+                child: Row(
+                  children: [
+                    const Text('Create A Post'),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    ElevatedButton.icon(
+                        onPressed: () {},
+                        icon: const Icon(Icons.add_photo_alternate_rounded),
+                        label: const Text('Make A post'))
+                  ],
+                ),
               ),
-            );
-          }),
-    );
+            ),
+            Expanded(
+              child: ListView.builder(
+                  itemCount: _data.length,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Column(
+                        children: [
+                          PostCard(
+                            date: _data[index]['date'],
+                            title: _data[index]["title"],
+                            description: _data[index]["description"],
+                            image: _data[index]["image"],
+                          ),
+                        ],
+                      ),
+                    );
+                  }),
+            )
+          ],
+        ));
   }
 }
