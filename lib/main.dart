@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:our_app_demo/pages/screens/Login.dart';
+import 'package:our_app_demo/pages/screens/first_choose.dart';
 import 'package:our_app_demo/pages/screens/splash_screen.dart';
 
 void main() {
@@ -18,8 +20,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Scaffold(
-        body: SplashScreen(),
+      home: Scaffold(
+        body: LoginPage(),
       ),
     );
   }

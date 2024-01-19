@@ -41,6 +41,7 @@ dependencies:
   cool_alert: ^2.0.1
   liquid_pull_to_refresh: ^3.0.1
   http: ^1.1.0
+  animate_do: ^3.1.2
 
 dev_dependencies:
   flutter_test:
