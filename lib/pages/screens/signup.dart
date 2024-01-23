@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:our_app_demo/navigations/navigation.dart';
-import 'package:our_app_demo/pages/screens/signup.dart';
+import 'package:our_app_demo/pages/screens/Login.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class SignupPage extends StatefulWidget {
+  const SignupPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<SignupPage> createState() => _SignupPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _SignupPageState extends State<SignupPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,16 +26,16 @@ class _LoginPageState extends State<LoginPage> {
                   const SizedBox(
                     height: 30,
                   ),
-                  TextButton(
-                      onPressed: () {
-                        Navigator.of(context).pushReplacement(MaterialPageRoute(
-                          builder: (_) => const NavBar(),
-                        ));
-                      },
-                      child: const Text(
-                        'Skip',
-                        style: TextStyle(fontSize: 20),
-                      )),
+                  // TextButton(
+                  //     onPressed: () {
+                  //       Navigator.of(context).pushReplacement(MaterialPageRoute(
+                  //         builder: (_) => const NavBar(),
+                  //       ));
+                  //     },
+                  //     child: const Text(
+                  //       'Skip',
+                  //       style: TextStyle(fontSize: 20),
+                  //     )),
                   const Center(
                     child: Image(
                       image: NetworkImage(
@@ -47,7 +47,7 @@ class _LoginPageState extends State<LoginPage> {
                       child: Column(
                     children: [
                       Text(
-                        'Login',
+                        'Sign Up',
                         style: TextStyle(
                             fontSize: 40,
                             color: Colors.indigoAccent.shade400,
@@ -118,16 +118,13 @@ class _LoginPageState extends State<LoginPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             TextButton(
-                                onPressed: () {},
-                                child: const Text('Forget Password?')),
-                            TextButton(
                                 onPressed: () {
                                   Navigator.of(context)
                                       .pushReplacement(MaterialPageRoute(
-                                    builder: (_) => const SignupPage(),
+                                    builder: (_) => const LoginPage(),
                                   ));
                                 },
-                                child: const Text('Sign Up')),
+                                child: const Text('Already have an account?')),
                           ],
                         ),
                       ],

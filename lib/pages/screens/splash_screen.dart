@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:our_app_demo/pages/screens/Login.dart';
 import 'package:progress_indicators/progress_indicators.dart';
 
 import '../../navigations/navigation.dart';
@@ -20,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen>
 
     Future.delayed(const Duration(seconds: 6), () {
       Navigator.of(context).pushReplacement(MaterialPageRoute(
-        builder: (_) => const NavBar(),
+        builder: (_) => const LoginPage(),
       ));
     });
   }
