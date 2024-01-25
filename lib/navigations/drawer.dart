@@ -7,8 +7,8 @@ class MyDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
         child: ListView(
-      children: const [
-        UserAccountsDrawerHeader(
+      children: [
+        const UserAccountsDrawerHeader(
           accountName: Text(''),
           accountEmail: Text(''),
           decoration: BoxDecoration(
@@ -18,22 +18,52 @@ class MyDrawer extends StatelessWidget {
                 fit: BoxFit.cover),
           ),
         ),
-        Divider(),
-        ListTile(
-          leading: Icon(Icons.person),
-          title: Text('Profile'),
+        const Divider(),
+        SizedBox(
+          height: 50,
+          child: TextButton.icon(
+              style: const ButtonStyle(
+                  alignment: AlignmentDirectional.centerStart),
+              onPressed: () {},
+              icon: const Icon(Icons.person),
+              label: const Text('Profile')),
         ),
-        ListTile(
-          leading: Icon(Icons.info),
-          title: Text('About Us'),
+        SizedBox(
+          height: 50,
+          child: TextButton.icon(
+              style: const ButtonStyle(
+                  alignment: AlignmentDirectional.centerStart),
+              onPressed: () {},
+              icon: const Icon(Icons.info),
+              label: const Text('About Us')),
         ),
-        ListTile(
-          leading: Icon(Icons.feedback),
-          title: Text('Feed Back'),
+        SizedBox(
+          height: 50,
+          child: TextButton.icon(
+              style: const ButtonStyle(
+                  alignment: AlignmentDirectional.centerStart),
+              onPressed: () {},
+              icon: const Icon(Icons.feedback),
+              label: const Text('Feed Back')),
         ),
-        ListTile(
-          leading: Icon(Icons.share),
-          title: Text('Share App'),
+        SizedBox(
+          height: 50,
+          child: TextButton.icon(
+              style: const ButtonStyle(
+                  alignment: AlignmentDirectional.centerStart),
+              onPressed: () {},
+              icon: const Icon(Icons.share),
+              label: const Text('Share App')),
+        ),
+        SizedBox(
+          height: 50,
+          child: TextButton.icon(
+              style: const ButtonStyle(
+                alignment: AlignmentDirectional.centerStart,
+              ),
+              onPressed: () {},
+              icon: const Icon(Icons.logout),
+              label: const Text('Log Out')),
         ),
       ],
     ));

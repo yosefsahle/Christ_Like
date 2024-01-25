@@ -37,10 +37,10 @@ class _LoginPageState extends State<LoginPage> {
                         style: TextStyle(fontSize: 20),
                       )),
                   const Center(
-                    child: Image(
-                      image: NetworkImage(
-                          'https://img.freepik.com/free-vector/access-control-system-abstract-concept_335657-3180.jpg'),
-                      width: 150,
+                    child: Icon(
+                      Icons.login_rounded,
+                      color: Colors.blue,
+                      size: 200,
                     ),
                   ),
                   Center(
