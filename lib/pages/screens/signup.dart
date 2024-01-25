@@ -38,9 +38,8 @@ class _SignupPageState extends State<SignupPage> {
                   //     )),
                   const Center(
                     child: Image(
-                      image: NetworkImage(
-                          'https://img.freepik.com/free-vector/access-control-system-abstract-concept_335657-3180.jpg'),
-                      width: 150,
+                      image: AssetImage('assets/images/Signup.jpg'),
+                      width: 250,
                     ),
                   ),
                   Center(
@@ -121,7 +120,7 @@ class _SignupPageState extends State<SignupPage> {
                                 onPressed: () {
                                   Navigator.of(context)
                                       .pushReplacement(MaterialPageRoute(
-                                    builder: (_) => const LoginPage(),
+                                    builder: (_) => LoginPage(),
                                   ));
                                 },
                                 child: const Text('Already have an account?')),

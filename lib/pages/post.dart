@@ -26,7 +26,7 @@ class _PostPageState extends State<PostPage> {
       _data = jsonData;
     });
 
-    return Future.delayed(Duration(seconds: 2));
+    return Future.delayed(const Duration(seconds: 1));
   }
 
   Uri post = Uri.parse('https://spiritlife.gospelinacts.org/API/');

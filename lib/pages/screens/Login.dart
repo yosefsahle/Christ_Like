@@ -9,6 +9,8 @@ class LoginPage extends StatefulWidget {
   State<LoginPage> createState() => _LoginPageState();
 }
 
+bool _show = true;
+
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
@@ -19,12 +21,12 @@ class _LoginPageState extends State<LoginPage> {
             width: double.infinity,
             color: Colors.white,
             child: Padding(
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const SizedBox(
-                    height: 30,
+                    height: 20,
                   ),
                   TextButton(
                       onPressed: () {
@@ -37,10 +39,9 @@ class _LoginPageState extends State<LoginPage> {
                         style: TextStyle(fontSize: 20),
                       )),
                   const Center(
-                    child: Icon(
-                      Icons.login_rounded,
-                      color: Colors.blue,
-                      size: 200,
+                    child: Image(
+                      image: AssetImage('assets/images/Login.jpg'),
+                      width: 250,
                     ),
                   ),
                   Center(
@@ -60,7 +61,7 @@ class _LoginPageState extends State<LoginPage> {
                       )
                     ],
                   )),
-                  SizedBox(
+                  const SizedBox(
                     height: 25,
                   ),
                   Center(
@@ -70,6 +71,7 @@ class _LoginPageState extends State<LoginPage> {
                           width: 400,
                           height: 60,
                           child: TextField(
+                            enableSuggestions: true,
                             decoration: InputDecoration(
                               hintText: 'Email or Phone',
                               border: OutlineInputBorder(),
@@ -80,14 +82,17 @@ class _LoginPageState extends State<LoginPage> {
                         const SizedBox(
                           height: 15,
                         ),
-                        const SizedBox(
+                        SizedBox(
                           width: 400,
                           height: 60,
                           child: TextField(
-                            decoration: InputDecoration(
-                              hintText: 'Email or Phone',
+                            obscureText: _show,
+                            enableSuggestions: false,
+                            autocorrect: false,
+                            decoration: const InputDecoration(
+                              hintText: 'Password',
                               border: OutlineInputBorder(),
-                              label: Text('Email or Phone'),
+                              label: Text('Password'),
                             ),
                           ),
                         ),
