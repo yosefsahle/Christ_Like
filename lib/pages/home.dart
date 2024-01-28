@@ -14,15 +14,15 @@ class HomePage extends StatelessWidget {
           child: ListView(
             children: [
               SizedBox(
-                height: 150,
+                height: 180,
                 child: Padding(
                     padding: const EdgeInsets.all(3),
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: [
                         Container(
-                          width: 150,
-                          height: 150,
+                          width: 180,
+                          height: 180,
                           decoration: const BoxDecoration(
                               color: Colors.amber,
                               boxShadow: [
