@@ -8,6 +8,7 @@ class PostCard extends StatelessWidget {
   final String description;
   final String image;
   final String date;
+  final bool comment;
 
   PostCard({
     super.key,
@@ -15,6 +16,7 @@ class PostCard extends StatelessWidget {
     required this.description,
     required this.image,
     required this.date,
+    required this.comment,
   });
 
   @override
@@ -46,11 +48,16 @@ class PostCard extends StatelessWidget {
               IconButton(onPressed: () {}, icon: const Icon(Icons.share)),
             ],
           ),
-          TextFormField(
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              iconColor: Colors.black,
-              labelText: 'Write Your Comment',
+          Visibility(
+            visible: comment,
+            child: TextFormField(
+              decoration: InputDecoration(
+                border: const OutlineInputBorder(),
+                iconColor: Colors.black,
+                labelText: 'Write Your Comment',
+                suffixIcon:
+                    IconButton(onPressed: () {}, icon: const Icon(Icons.send)),
+              ),
             ),
           ),
           const Divider(

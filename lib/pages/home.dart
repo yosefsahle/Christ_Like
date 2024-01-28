@@ -5,8 +5,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Home'),
+    return Column(
+      children: [Text('hello'), Text('data')],
     );
   }
 }

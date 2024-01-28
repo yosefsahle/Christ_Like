@@ -1,10 +1,11 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:our_app_demo/navigations/drawer.dart';
+import 'package:our_app_demo/navigations/post_tabs.dart';
 // import 'package:our_app_demo/pages/feed_back.dart';
 import 'package:our_app_demo/pages/home.dart';
 import 'package:our_app_demo/pages/library.dart';
-import 'package:our_app_demo/pages/post.dart';
+import 'package:our_app_demo/pages/Feeds_post.dart';
 // import 'package:our_app_demo/pages/profile.dart';
 import 'package:our_app_demo/pages/schedule.dart';
 
@@ -43,9 +44,10 @@ class _NavBarState extends State<NavBar> {
   // ignore: non_constant_identifier_names
   List Screens = [
     const HomePage(),
-    const PostPage(),
+    PostTabs(),
     const SchedulePage(),
     LibraryPage(),
+    const PostPage()
   ];
   int _selectedIndex = 0;
   @override
@@ -88,6 +90,7 @@ class _NavBarState extends State<NavBar> {
               Icon(
                 Icons.my_library_books,
               ),
+              Icon(Icons.group),
             ],
             onTap: (index) {
               setState(() {

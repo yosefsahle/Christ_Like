@@ -4,16 +4,15 @@ import 'package:flutter/services.dart';
 import 'package:our_app_demo/widgets/post_card.dart';
 import 'package:http/http.dart' as http;
 
-class PostPage extends StatefulWidget {
-  const PostPage({super.key});
+class NewsPage extends StatefulWidget {
+  const NewsPage({super.key});
 
   @override
-  State<PostPage> createState() => _PostPageState();
+  State<NewsPage> createState() => _PostPageState();
 }
 
-class _PostPageState extends State<PostPage> {
+class _PostPageState extends State<NewsPage> {
   List _data = [];
-
   Future<void> _refresh() async {
     setState(() {
       _data.clear();
@@ -49,7 +48,7 @@ class _PostPageState extends State<PostPage> {
         child: Column(
           children: [
             Visibility(
-              visible: true,
+              visible: false,
               child: Padding(
                 padding: const EdgeInsets.all(12),
                 child: Row(
@@ -75,6 +74,7 @@ class _PostPageState extends State<PostPage> {
                       child: Column(
                         children: [
                           PostCard(
+                            comment: false,
                             date: _data[index]['date'],
                             title: _data[index]["title"],
                             description: _data[index]["description"],
