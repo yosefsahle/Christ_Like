@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
         Expanded(
           child: ListView(
             children: [
-              Container(
+              SizedBox(
                 height: 150,
                 child: Padding(
                     padding: const EdgeInsets.all(3),
