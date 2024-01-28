@@ -8,69 +8,82 @@ class HomePage extends StatelessWidget {
     return Column(
       children: [
         //STORIES
-        Padding(
-          padding: EdgeInsets.only(left: 4, right: 4, top: 6, bottom: 15),
-          child: SizedBox(
-              height: 150,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  Container(
-                    width: 150,
-                    decoration: const BoxDecoration(
-                        color: Colors.amber,
-                        borderRadius: BorderRadius.all(Radius.circular(5))),
-                    child: const Center(
-                      child: Text('Daily Feeds'),
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 15,
-                  ),
-                  Container(
-                    width: 150,
-                    decoration: const BoxDecoration(
-                        color: Colors.amber,
-                        borderRadius: BorderRadius.all(Radius.circular(5))),
-                    child: const Center(
-                      child: Text('Daily News'),
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 15,
-                  ),
-                  Container(
-                    width: 150,
-                    decoration: const BoxDecoration(
-                        color: Colors.amber,
-                        borderRadius: BorderRadius.all(Radius.circular(5))),
-                    child: const Center(
-                      child: Text('Daily News 2'),
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 15,
-                  ),
-                  Container(
-                    width: 150,
-                    decoration: const BoxDecoration(
-                        color: Colors.amber,
-                        borderRadius: BorderRadius.all(Radius.circular(5))),
-                    child: const Center(
-                      child: Text('Daily Feeds 2'),
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 15,
-                  ),
-                ],
-              )),
-        ),
 
         //Posts
         Expanded(
           child: ListView(
             children: [
+              Container(
+                height: 150,
+                child: Padding(
+                    padding: const EdgeInsets.all(3),
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        Container(
+                          width: 150,
+                          height: 150,
+                          decoration: const BoxDecoration(
+                              color: Colors.amber,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black,
+                                  offset: Offset(0, 2),
+                                  blurRadius: 16,
+                                  spreadRadius: 12,
+                                ),
+                              ],
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(5))),
+                          child: const Center(
+                            child: Text('Daily Feeds'),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 15,
+                        ),
+                        Container(
+                          width: 150,
+                          decoration: const BoxDecoration(
+                              color: Colors.amber,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(5))),
+                          child: const Center(
+                            child: Text('Daily News'),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 15,
+                        ),
+                        Container(
+                          width: 150,
+                          decoration: const BoxDecoration(
+                              color: Colors.amber,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(5))),
+                          child: const Center(
+                            child: Text('Daily News 2'),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 15,
+                        ),
+                        Container(
+                          width: 150,
+                          decoration: const BoxDecoration(
+                              color: Colors.amber,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(5))),
+                          child: const Center(
+                            child: Text('Daily Feeds 2'),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 15,
+                        ),
+                      ],
+                    )),
+              ),
               Container(
                 decoration: const BoxDecoration(color: Colors.grey),
                 height: 250,
