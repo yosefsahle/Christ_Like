@@ -28,6 +28,28 @@ class MyDrawer extends StatelessWidget {
               icon: const Icon(Icons.person),
               label: const Text('Profile')),
         ),
+        Visibility(
+          child: SizedBox(
+            height: 50,
+            child: TextButton.icon(
+                style: const ButtonStyle(
+                    alignment: AlignmentDirectional.centerStart),
+                onPressed: () {},
+                icon: const Icon(Icons.lock_person_rounded),
+                label: const Text('permission Center')),
+          ),
+        ),
+        Visibility(
+          child: SizedBox(
+            height: 50,
+            child: TextButton.icon(
+                style: const ButtonStyle(
+                    alignment: AlignmentDirectional.centerStart),
+                onPressed: () {},
+                icon: const Icon(Icons.connect_without_contact_rounded),
+                label: const Text('My Schedule Contacts')),
+          ),
+        ),
         SizedBox(
           height: 50,
           child: TextButton.icon(
@@ -37,14 +59,17 @@ class MyDrawer extends StatelessWidget {
               icon: const Icon(Icons.info),
               label: const Text('About Us')),
         ),
-        SizedBox(
-          height: 50,
-          child: TextButton.icon(
-              style: const ButtonStyle(
-                  alignment: AlignmentDirectional.centerStart),
-              onPressed: () {},
-              icon: const Icon(Icons.feedback),
-              label: const Text('Feed Back')),
+        Visibility(
+          visible: true,
+          child: SizedBox(
+            height: 50,
+            child: TextButton.icon(
+                style: const ButtonStyle(
+                    alignment: AlignmentDirectional.centerStart),
+                onPressed: () {},
+                icon: const Icon(Icons.feedback),
+                label: const Text('Feed Back')),
+          ),
         ),
         SizedBox(
           height: 50,
