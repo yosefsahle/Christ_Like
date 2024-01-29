@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
-import 'package:our_app_demo/pages/home.dart';
 
 class PostCard extends StatelessWidget {
   var _overlaycontroller = OverlayPortalController();
